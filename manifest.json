@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Chegg Auto Refresher",
+  "version": "1.0",
+  "description": "Auto refreshes Chegg Expert Q&A page for new questions",
+    "permissions": ["tabs", "storage"],
+  "content_scripts": [
+    {
+      "js": ["scripts/content.js"],
+      "matches": [
+        "https://expert.chegg.com/qna/authoring/answer/*"
+      ]
+    }
+  ],
+  "action":{
+        "default_title": "Popup and Content Script",
+        "default_popup": "popup.html"
+    }
+}
