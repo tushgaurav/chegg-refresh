@@ -9,7 +9,7 @@
     "48": "images/icon48.png",
     "128": "images/icon128.png"
   },
-  "permissions": ["storage", "tabs"],
+  "permissions": ["storage"],
   "host_permissions": ["https://expert.chegg.com/qna/authoring/answer"],
   "content_scripts": [
     {
