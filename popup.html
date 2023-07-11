@@ -3,20 +3,28 @@
   <head>
     <title>Auto Refresh Options</title>
     <style>
+      :root {
+        --chegg-orange: #f77c2b;
+      }
       * {
         box-sizing: border-box;
         margin: 0;
       }
       body {
-        width: 200px;
+        width: 240px;
         height: 200px;
         font-family: Arial, sans-serif;
-        padding: 10px;
+
         background-color: rgb(226, 222, 217);
       }
+
+      .header {
+        padding: 10px;
+      }
       h1 {
-        font-size: 15px;
-        color: orange;
+        font-size: 1.4em;
+        font-weight: 700;
+        color: var(--chegg-orange);
       }
       .version {
         font-size: 10px;
@@ -26,20 +34,58 @@
         display: block;
         margin-bottom: 5px;
       }
+      .line {
+        width: 100%;
+        height: 3px;
+        background-color: var(--chegg-orange);
+      }
+      .form {
+        padding: 10px;
+      }
+
       input {
         width: 100px;
+        display: block;
+        padding: 5px;
       }
       button {
         margin-top: 10px;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: var(--chegg-orange);
+        color: white;
+        font-weight: 700;
+      }
+      button:hover {
+        cursor: pointer;
+      }
+      button:active {
+        background-color: #e56a1f;
+        transform: translate(0, 2px);
       }
     </style>
   </head>
   <body>
-    <h1>Chegg Refresh Extension</h1>
-    <span class="version">v0.01 alpha</span>
-    <label for="duration">Refresh Duration (in seconds):</label>
-    <input type="number" id="duration" min="1" required />
-    <button id="save">Save</button>
+    <div class="header">
+      <h1>Chegg Refresh Extension</h1>
+      <span class="version">v0.01 alpha</span>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="form">
+      <label for="duration">Refresh Duration (in seconds):</label>
+      <input
+        type="number"
+        id="duration"
+        min="1"
+        required
+        placeholder="duration"
+      />
+      <button id="save">Save</button>
+      <button id="stop">Stop</button>
+    </div>
 
     <script src="popup.js"></script>
   </body>
